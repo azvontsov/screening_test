@@ -48,6 +48,7 @@ function App() {
 
         <div>
           <ReactEmbedGist
+            className="gist"
             gist="azvontsov/b2c3f050f73fb462160e9f2b28defce9"
             wrapperClass="gist__bash"
           />
