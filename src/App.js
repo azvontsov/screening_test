@@ -11,6 +11,7 @@ import TabPanel from '@mui/joy/TabPanel';
 import { Apples } from './components/Apples';
 import { Bananas } from './components/Bananas';
 import { Grapes } from './components/Grapes';
+import { padding } from '@mui/system';
 
 function App() {
   const [index, setIndex] = React.useState(0);
@@ -19,6 +20,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Tabs
+          className="tabs"
           aria-label="Plain tabs"
           value={index}
           onChange={(event, value) => setIndex(value)}

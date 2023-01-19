@@ -27,6 +27,7 @@ code {
   color: white;
 }
 
-.gist {
+.gist,
+.tabs {
   padding: 15px;
 }
