@@ -1,6 +1,8 @@
 import './App.css';
 import * as React from 'react';
 
+import ReactEmbedGist from 'react-embed-gist';
+
 import Tabs from '@mui/joy/Tabs';
 import TabList from '@mui/joy/TabList';
 import Tab from '@mui/joy/Tab';
@@ -12,6 +14,7 @@ import { Grapes } from './components/Grapes';
 
 function App() {
   const [index, setIndex] = React.useState(0);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -42,6 +45,13 @@ function App() {
             </b>
           </TabPanel>
         </Tabs>
+
+        <div>
+          <ReactEmbedGist
+            gist="azvontsov/b2c3f050f73fb462160e9f2b28defce9"
+            wrapperClass="gist__bash"
+          />
+        </div>
       </header>
     </div>
   );
