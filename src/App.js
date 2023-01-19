@@ -1,22 +1,47 @@
-import logo from './logo.svg';
 import './App.css';
+import * as React from 'react';
+
+import Tabs from '@mui/joy/Tabs';
+import TabList from '@mui/joy/TabList';
+import Tab from '@mui/joy/Tab';
+import TabPanel from '@mui/joy/TabPanel';
+
+import { Apples } from './components/Apples';
+import { Bananas } from './components/Bananas';
+import { Grapes } from './components/Grapes';
 
 function App() {
+  const [index, setIndex] = React.useState(0);
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Tabs
+          aria-label="Plain tabs"
+          value={index}
+          onChange={(event, value) => setIndex(value)}
+          sx={{ borderRadius: 'lg' }}
         >
-          Learn React
-        </a>
+          <TabList variant="plain">
+            <Tab variant={index === 0 ? 'outlined' : 'plain'}>Apples</Tab>
+            <Tab variant={index === 1 ? 'outlined' : 'plain'}>Bananas</Tab>
+            <Tab variant={index === 2 ? 'outlined' : 'plain'}>Grapes</Tab>
+          </TabList>
+          <TabPanel value={0} sx={{ p: 2 }}>
+            <b>
+              <Apples />
+            </b>
+          </TabPanel>
+          <TabPanel value={1} sx={{ p: 2 }}>
+            <b>
+              <Bananas />
+            </b>
+          </TabPanel>
+          <TabPanel value={2} sx={{ p: 2 }}>
+            <b>
+              <Grapes />
+            </b>
+          </TabPanel>
+        </Tabs>
       </header>
     </div>
   );
